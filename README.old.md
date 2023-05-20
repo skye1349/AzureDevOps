@@ -1,1 +1,0 @@
-# freshfarmpicking-react
