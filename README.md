@@ -2,9 +2,9 @@
 
 In the project directory, you can run:
 
-### `npm install`
+### `yarn`
 
-### `npm run dev`
+### `yarn run dev`
 
 Runs the app in the development mode.\
 Open localhost:port to view it in the browser.
