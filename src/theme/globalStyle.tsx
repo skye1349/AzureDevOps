@@ -18,27 +18,28 @@ export const Colors = {
 }
 
 const theme = extendTheme({
-  palette: {
-    primary: {
-      main: Colors.primary,
+  colorSchemes: {
+    light: {
+      palette: {
+        primary: {
+          50: '#ffffff',
+        },
+      },
     },
-    secondary: {
-      main: Colors.secondary,
-    },
-    danger: {
-      main: Colors.errorColor,
-    },
-    success: {
-      main: Colors.successColor,
-    },
-    warning: {
-      main: Colors.warningColor,
+    dark: {
+      palette: {
+        primary: {
+          50: '#000000',
+        },
+      },
     },
   },
   typography: {
-    fontFamily: 'Helvetica Neue' || 'Arial' || 'sans-serif',
-    fontSize: 14,
-    textTransform: 'none',
+    display1: {
+      fontFamily: 'Helvetica Neue' || 'Arial' || 'sans-serif',
+      fontSize: '14px',
+      fontWeight: 100,
+    },
     h1: {
       fontSize: '24px',
     },
@@ -48,28 +49,14 @@ const theme = extendTheme({
     h3: {
       fontSize: '18px',
     },
-    date: {
-      fontSize: '12px',
-    },
   },
-  breakpoint: {
+  breakpoints: {
     keys: ['xs', 'sm', 'md', 'lg', 'xl'],
-    values: {
-      xs: 0,
-      sm: 600,
-      md: 900,
-      lg: 1200,
-      xl: 1536,
-    },
   },
   components: {
-    JoyButton: {
+    JoyIconButton: {
       defaultProps: {
-        variant: 'contained',
-        color: Colors.searchButtonColor,
-        padding: '8px 7px',
-        width: '74px',
-        borderRadius: '15px',
+        size: 'sm',
       },
       styleOverrides: {
         root: {
