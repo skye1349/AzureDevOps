@@ -3,7 +3,7 @@ import { loginRequest } from '../authConfig'
 
 const signIn = async (msalInstance: IPublicClientApplication) => {
   try {
-    msalInstance.loginRedirect(loginRequest)
+    await msalInstance.loginRedirect(loginRequest)
   } catch (error) {
     console.log('Error signing in:', error)
   }
