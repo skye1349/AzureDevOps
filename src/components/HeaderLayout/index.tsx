@@ -1,6 +1,6 @@
-import React from 'react'
 import { Link, Outlet } from 'react-router-dom'
-import { Box, List, ListItemText } from '@mui/material'
+import { Box, List } from '@mui/joy/'
+import AzureAuthButtons from '../AzureAuthButtons/AzureAuthButtons'
 const HeaderLayout = () => {
   return (
     <>
@@ -13,20 +13,15 @@ const HeaderLayout = () => {
           }}
         >
           <Link to="/">
-            <ListItemText primary="Home" />
+            <span>Home</span>
           </Link>
           <Link to="/categories">
-            <ListItemText primary="Categories" />
+            <span>Categories</span>
           </Link>
           <Link to="/location">
-            <ListItemText primary=" Location" />
+            <span>Location</span>
           </Link>
-          <Link to="/register">
-            <ListItemText primary=" Register" />
-          </Link>
-          <Link to="/login">
-            <ListItemText primary=" Login" />
-          </Link>
+          <AzureAuthButtons />
         </List>
       </Box>
       <Outlet />

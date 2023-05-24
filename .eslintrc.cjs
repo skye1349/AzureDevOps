@@ -17,5 +17,7 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['react', '@typescript-eslint', 'prettier'],
-  rules: { 'prettier/prettier': ['error', { endOfLine: 'crlf' }] },
+  rules: {
+    'react/react-in-jsx-scope': 'off',
+  },
 }
