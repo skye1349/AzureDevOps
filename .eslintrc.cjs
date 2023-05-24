@@ -17,5 +17,5 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['react', '@typescript-eslint', 'prettier'],
-  rules: {},
+  rules: { 'prettier/prettier': ['error', { endOfLine: 'crlf' }] },
 }
