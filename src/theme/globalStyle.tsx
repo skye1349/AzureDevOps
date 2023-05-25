@@ -36,22 +36,6 @@ const theme = extendTheme({
       },
     },
   },
-  typography: {
-    display1: {
-      fontFamily: 'Helvetica Neue' || 'Arial' || 'sans-serif',
-      fontSize: '14px',
-      fontWeight: 100,
-    },
-    h1: {
-      fontSize: '24px',
-    },
-    h2: {
-      fontSize: '20px',
-    },
-    h3: {
-      fontSize: '18px',
-    },
-  },
   breakpoints: {
     keys: ['xs', 'sm', 'md', 'lg', 'xl'],
   },
@@ -68,6 +52,25 @@ const theme = extendTheme({
           fontSize: '14px',
           '&:hover': {
             backgroundColor: Colors.hoverSearchButtonColor,
+          },
+        },
+      },
+    },
+    JoyTypography: {
+      styleOverrides: {
+        root: {
+          h1: {
+            fontSize: '24px',
+          },
+          h2: {
+            fontSize: '20px',
+          },
+          h3: {
+            fontSize: '18px',
+          },
+          display1: {
+            fontFamily: 'Helvetica Neue' || 'Arial' || 'sans-serif',
+            fontSize: '14px',
           },
         },
       },
