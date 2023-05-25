@@ -14,7 +14,9 @@ export const Colors = {
 
   // button color
   searchButtonColor: '#1fa53e',
+  hoverSearchButtonColor: '#8fd29f',
   logoutButtonColor: '#db2828',
+  hoverLogoutButtonColor: '#ed9494',
 }
 
 const theme = extendTheme({
@@ -54,13 +56,19 @@ const theme = extendTheme({
     keys: ['xs', 'sm', 'md', 'lg', 'xl'],
   },
   components: {
-    JoyIconButton: {
-      defaultProps: {
-        size: 'sm',
-      },
+    JoyButton: {
       styleOverrides: {
         root: {
-          color: Colors.searchButtonColor[600],
+          size: 'sm',
+          backgroundColor: Colors.searchButtonColor,
+          color: Colors.primary,
+          fontWeight: '600',
+          border: 'none',
+          borderRadius: '10px',
+          fontSize: '14px',
+          '&:hover': {
+            backgroundColor: Colors.hoverSearchButtonColor,
+          },
         },
       },
     },

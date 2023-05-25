@@ -1,30 +1,19 @@
-import { Link, Outlet } from 'react-router-dom'
-import { Box, List } from '@mui/joy/'
-import AzureAuthButtons from '../AzureAuthButtons/AzureAuthButtons'
+import { useTheme } from '@mui/material/styles'
+import { useMediaQuery } from '@mui/material'
+import DesktopLayout from './DesktopLayout'
+import MobileLayout from './MobleLayout'
+
 const HeaderLayout = () => {
+  const theme = useTheme()
+  const matches = useMediaQuery(theme.breakpoints.up('md'))
+
   return (
     <>
-      <Box>
-        <List
-          sx={{
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-          }}
-        >
-          <Link to="/">
-            <span>Home</span>
-          </Link>
-          <Link to="/categories">
-            <span>Categories</span>
-          </Link>
-          <Link to="/location">
-            <span>Location</span>
-          </Link>
-          <AzureAuthButtons />
-        </List>
-      </Box>
-      <Outlet />
+      {matches ? (
+        <DesktopLayout matches={matches} />
+      ) : (
+        <MobileLayout matches={matches} />
+      )}
     </>
   )
 }

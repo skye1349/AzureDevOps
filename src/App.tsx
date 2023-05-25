@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage'
 import Categories from './pages/Categories'
 import Location from './pages/Location'
 import Sale from './pages/Sale'
+import Profile from './pages/Profiles'
 import { CssVarsProvider } from '@mui/joy'
 import theme from './theme/globalStyle'
 import { MsalProvider } from '@azure/msal-react'
@@ -48,6 +49,7 @@ const App = () => {
               <Route path="/categories" element={<Categories />} />
               <Route path="/location" element={<Location />} />
               <Route path="/sale" element={<Sale />} />
+              <Route path="/profile" element={<Profile />} />
             </Route>
           </Routes>
         </BrowserRouter>
