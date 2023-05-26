@@ -1,7 +1,7 @@
 import { Link, Outlet } from 'react-router-dom'
 import AzureAuthButtons from '../AzureAuthButtons/AzureAuthButtons'
 import { Container, Logo, MyList, MyTypography, MyButton } from './HeaderStyles'
-import AppLogo from '../../asserts/Logo/logo.662418f3.png'
+import AppLogo from '../../../asserts/Logo/logo.662418f3.png'
 
 type Prop = {
   matches: boolean

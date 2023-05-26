@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { styled } from '@mui/joy/styles'
-import { Colors } from '../../theme/globalStyle'
+import { Colors } from '../../../theme/globalStyle'
 import { Logo } from './HeaderStyles'
 import { Box, IconButton } from '@mui/joy'
 import WidgetsIcon from '@mui/icons-material/Widgets'
-import AppLogo from '../../asserts/Logo/logo.662418f3.png'
+import AppLogo from '../../../asserts/Logo/logo.662418f3.png'
 import AzureAuthButtons from '../AzureAuthButtons/AzureAuthButtons'
 
 type Prop = {

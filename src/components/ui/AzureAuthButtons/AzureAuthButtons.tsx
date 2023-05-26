@@ -1,3 +1,4 @@
+import * as React from 'react'
 import { Link } from 'react-router-dom'
 import { useMsal } from '@azure/msal-react'
 import { signIn, logOut } from '../../../utils/AzureB2CService'
@@ -26,11 +27,17 @@ const MyIconButton = styled(IconButton)(({ theme }) => ({
   color: 'grey',
   fontSize: '1.5rem',
   flexGrows: 1,
+  textDecoration: 'none',
   [theme.breakpoints.down('md')]: {
     fontSize: '12px',
     flexGrows: 0,
   },
-}))
+  '&.user-btn': {
+    display: 'flex',
+    columnGap: '5px',
+    padding: '0 5px',
+  },
+})) as typeof IconButton
 
 // name style
 const Name = styled(Typography)(({ theme }) => ({
@@ -69,21 +76,19 @@ const AzureAuthButtons = () => {
   const handleLogout = () => {
     logOut(instance)
   }
+
   return (
     <div>
       {activeAccount ? (
         <Container>
-          <MyIconButton>
+          <MyIconButton component={Link} to="/cart">
             <LocalGroceryStoreIcon />
           </MyIconButton>
-          <MyIconButton>
+          <MyIconButton component={Link} to="/notification">
             <NotificationsIcon />
           </MyIconButton>
-          <MyIconButton>
-            <PersonIcon />
-            <Name>
-              <Link to="/profile"> {activeAccount.name}</Link>
-            </Name>
+          <MyIconButton component={Link} to="/user" className="user-btn">
+            <PersonIcon /> <Name>{activeAccount.name}</Name>
           </MyIconButton>
           <LogoutButton onClick={handleLogout}>Logout</LogoutButton>
         </Container>

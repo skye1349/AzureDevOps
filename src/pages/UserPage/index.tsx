@@ -8,7 +8,7 @@ const UserPage = () => {
         <Link to="/lists">Check my favourite farms</Link>
       </List>
       <List>
-        <Link to="#">Profile Information</Link>
+        <Link to="/profile">Profile Information</Link>
       </List>
     </Box>
   )

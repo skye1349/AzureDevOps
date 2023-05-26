@@ -1,6 +1,6 @@
 import { Box, List, Typography } from '@mui/joy'
 import { styled } from '@mui/joy/styles'
-import { Colors } from '../../theme/globalStyle'
+import { Colors } from '../../../theme/globalStyle'
 
 type Props = {
   type: string
