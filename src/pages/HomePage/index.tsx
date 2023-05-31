@@ -1,7 +1,6 @@
 import React, { ChangeEvent } from 'react'
 import Button from '@mui/joy/Button'
-import SelectBox from '../../../../SelectBox'
-
+import SelectBox from '../../components/SelectBox'
 // interface Option {
 //   value: number
 //   label: string
