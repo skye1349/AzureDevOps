@@ -9,6 +9,8 @@ import {
 } from '@azure/msal-browser'
 import theme from './theme/globalStyle'
 import Pages from './routes'
+import { Provider } from 'react-redux'
+import store from './redux/store'
 
 // Account selection logic is app dependent. Adjust as needed for different use cases.
 const accounts = msalInstance.getAllAccounts()
@@ -38,7 +40,9 @@ const App = () => {
     <CssVarsProvider theme={theme}>
       <BrowserRouter>
         <MsalProvider instance={msalInstance}>
-          <Pages />
+          <Provider store={store}>
+            <Pages />
+          </Provider>
         </MsalProvider>
       </BrowserRouter>
     </CssVarsProvider>

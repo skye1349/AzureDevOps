@@ -8,6 +8,12 @@ import { Button, IconButton, Typography } from '@mui/joy'
 import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore'
 import NotificationsIcon from '@mui/icons-material/Notifications'
 import PersonIcon from '@mui/icons-material/Person'
+import { useDispatch } from 'react-redux'
+import { useEffect } from 'react'
+import {
+  setLocalAccountId,
+  clearLocalAccountId,
+} from '../../../redux/userLoginSlice'
 
 // Container
 const Container = styled('div')(({ theme }) => ({
@@ -68,14 +74,23 @@ const LogoutButton = styled(Button)(({ theme }) => ({
 const AzureAuthButtons = () => {
   const { instance } = useMsal()
   const activeAccount = instance.getActiveAccount()
-
+  const dispatch = useDispatch()
   const handleSignIn = async () => {
     await signIn(instance)
   }
 
   const handleLogout = () => {
     logOut(instance)
+    dispatch(clearLocalAccountId()) // Dispatch the clearLocalAccountId action
   }
+
+  // Update the localAccountId when activeAccount changes
+  useEffect(() => {
+    if (activeAccount) {
+      const { username, localAccountId } = activeAccount
+      dispatch(setLocalAccountId({ username, localAccountId })) // Dispatch the setLocalAccountId action
+    }
+  }, [activeAccount, dispatch])
 
   return (
     <div>
