@@ -42,6 +42,16 @@ npm install -g @azure/static-web-apps-cli
 
     The Azure Static Web App simulator will be available at `http://localhost:4280`.
 
+## DevOps
+
+We now use GitHub Actions for simplified CI/CD pipeline. The workflow is defined in `.github\workflows`.
+
+## Online Site
+
+Please visit: <https://thankful-sand-05f09fa00.3.azurestaticapps.net/>
+
+The site is protected with a password: `FarmPicking2023!`.
+
 ## Documentation
 
 - [Add an API to Azure Static Web Apps with Azure Functions](https://learn.microsoft.com/en-us/azure/static-web-apps/add-api?tabs=react)
